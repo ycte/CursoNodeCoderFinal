@@ -1,0 +1,259 @@
+<div class="container">
+  <nav class="nav m-5">
+    <a class="nav-link" aria-current="page" href="/home">
+      Home
+    </a>
+    <a class="nav-link" aria-current="page" href="/chat">
+      Chat
+    </a>
+    <a class="nav-link" aria-current="page" href="/cart/{{user.cart}}">
+      Carrito
+    </a>
+    <a class="nav-link" aria-current="page" href="/realtimeproducts">
+      Real Time Products
+    </a>
+    <a class="nav-link" aria-current="page" href="/profile">
+      Perfil de Usuario
+    </a>
+    <a name="panel" class="nav-link" aria-current="page" href="/admin">
+    Panel De Administracion
+    </a>
+  </nav>
+  <div class="input-group">
+    <a class="btn btn-primary me-1" href="/home/?limit=5">
+      Limite de 5
+    </a>
+
+    <a class="btn btn-primary me-1" href="/home/?sort=1">
+      ordenar por precio ascendente
+    </a>
+
+    <a class="btn btn-primary me-3" href="/home/?sort=-1">
+      ordenar por precio descendente
+    </a>
+
+    <select class="form-selec col-1" name="filtro" id="filtro">
+      <option selected value="title">
+        Titulo
+      </option>
+      <option value="descripcion">
+        Descripcion
+      </option>
+      <option value="price">
+        Precio
+      </option>
+    </select>
+    <input
+      class="form-control"
+      type="text"
+      name="buscar"
+      id="buscar"
+      placeholder="Buscar..."
+    />
+    <button class="btn btn-primary" type="button" onclick="filtro()">
+      Buscar
+    </button>
+  </div>
+  <div class="d-flex justify-content-center mt-5">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          {{#if products.hasPrevPage}}
+            <a class="page-link" href={{products.prevLink}}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="24"
+                fill="currentColor"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                ></path>
+              </svg>
+            </a>
+          {{/if}}
+        </li>
+        <li class="page-item">
+          <spam class="page-link">
+            {{products.page}}
+          </spam>
+        </li>
+        <li class="page-item">
+          {{#if products.hasNextPage}}
+            <a class="page-link" href={{products.nextLink}}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="24"
+                fill="currentColor"
+                class="bi bi-arrow-right-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                ></path>
+              </svg>
+            </a>
+          {{/if}}
+        </li>
+      </ul>
+    </nav>
+  </div>
+  {{#if user}}
+    <div name="admin" id="{{user.role}}" hidden >{{user.role}}</div>
+    <div class="alert alert-primary" role="alert">
+      <div class="row">
+        <h4 class="text-center col">
+          Bienvenido {{user.name}} te registraste con el siguiente correo {{
+            user.email
+          }}
+        </h4>
+        <button
+          type="button"
+          class="btn-close mt-1"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
+  {{/if}}
+  <div class="row">
+    {{#each products.docs}}
+      <div class="container-fluid col">
+        <div class="card m-5" style="width: 18rem;">
+          <img src="{{thumbnails}}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">
+              {{title}}
+            </h5>
+            <p class="card-text">
+              {{descripcion}}
+            </p>
+            <h5>
+              ${{price}}
+            </h5>
+            <h5>
+              {{stock}} unidades
+            </h5>
+            <div name="btnAddProduct">
+            <button
+              id="{{_id}}"
+              name="{{../user.cart}}"
+              type="button"
+              onclick="addProductToCart(this.id, this.name)"
+              class="btn btn-primary"
+            >
+              Agregar
+            </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <br />
+  <div class="d-flex justify-content-center">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          {{#if products.hasPrevPage}}
+            <a class="page-link" href={{products.prevLink}}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="24"
+                fill="currentColor"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                ></path>
+              </svg>
+            </a>
+          {{/if}}
+        </li>
+        <li class="page-item">
+          <spam class="page-link">
+            {{products.page}}
+          </spam>
+        </li>
+        <li class="page-item">
+          {{#if products.hasNextPage}}
+            <a class="page-link" href={{products.nextLink}}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="24"
+                fill="currentColor"
+                class="bi bi-arrow-right-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                ></path>
+              </svg>
+            </a>
+          {{/if}}
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<script>
+  function rol(){
+    let rol = document.getElementsByName("admin");
+    let panel = document.getElementsByName("panel")
+    let button = document.getElementsByName("btnAddProduct")
+    if(rol[0].id === "admin"){
+      button.forEach((e)=>{
+        e.setAttribute("hidden", true)
+      })
+      
+    }else{
+      panel[0].setAttribute("hidden", true)
+    }
+    
+  }
+  async function addProductToCart(productId, cartId) {
+
+
+    try {     
+      let url = "/api/carts/"+ cartId + "/product/" + productId
+
+      const response = await fetch(url, {
+        method: 'post'
+      });
+      
+        Swal.fire({
+                        position: 'center',
+                        toast: true,
+                        icon: 'success',
+                        title: 'Productro Agregado Correctamente',
+                        showConfirmButton: false,
+                        timer: 1500
+                        })
+    
+    }    
+    catch(err) {
+            Swal.fire({
+                        position: 'center',
+                        toast: true,
+                        icon: 'error',
+                        title: 'Error al Cargar el Producto',
+                        showConfirmButton: false,
+                        timer: 1500
+                        })
+      console.error(`Error: ${err}`);
+    }
+  }
+
+  rol();
+</script>

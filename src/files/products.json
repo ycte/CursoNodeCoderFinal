@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Eternos - La Nación",
+    "descripcion": "Una edición especial para atesorar y revivir uno de los hitos más importantes de la historia del deporte argentino.",
+    "price": 200,
+    "thumbnail": "https://catalogos.libooks.com/9789878487588_md.webp",
+    "code": 1,
+    "stock": 10,
+    "id": 1
+  },
+  {
+    "title": "Harry potter y la piedra filosofal",
+    "descripcion": "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley. Se siente muy triste y solo, hasta que un buen día recibe una carta que cambiará su vida para siempre. ",
+    "price": 200,
+    "thumbnail": "https://www.lanormallibros.com.ar/media/libros/bd4be862594dc7fdb53166047e87f2af.jpg",
+    "code": 2,
+    "stock": 10,
+    "id": 2
+  },
+  {
+    "title": "Miles davis / live around the world - libro + vinilo",
+    "descripcion": "Live Around the World es un álbum en vivo del músico de jazz estadounidense Miles Davis. El CD sencillo contiene grabaciones en vivo de 1988 a 1991. El álbum alcanzó el puesto número 4 en la lista Billboard Top Jazz Album.",
+    "price": 200,
+    "thumbnail": "https://catalogos.libooks.com/9789878903972_md.webp",
+    "code": 3,
+    "stock": 10,
+    "id": 3
+  },
+  {
+    "title": "La abeja (ne)",
+    "descripcion": "Se sabe que el amor y la obsesión son los impulsos de las obras de arte, para emplazarlas como un monumento más trasparente, que rinde culto a la belleza eincertidumbre del mundo.",
+    "price": 200,
+    "thumbnail": "https://catalogos.libooks.com/9789500441162_md.webp",
+    "code": 4,
+    "stock": 10,
+    "id": 4
+  },
+  {
+    "title": "Vos",
+    "descripcion": "¿Hay que decir adiós? ¿O simplemente uno se retira sin más?",
+    "price": 200,
+    "thumbnail": "https://catalogos.libooks.com/9789500442367_md.webp",
+    "code": 5,
+    "stock": 10,
+    "id": 5
+  },
+  {
+    "title": "Yo médica, yo paciente",
+    "descripcion": "A veces, muy de vez en cuando, aparece un texto que uno o una necesitaba leer sin saberlo. Eso me pasó con Yo médica, yo paciente, de Florencia Cahn: no sabía lo mucho que yo necesitaba leer ese texto hasta que lo hice. Y hacerlo fue reparador, resultó una reconciliación y un aprendizaje.",
+    "price": 200,
+    "thumbnail": "https://catalogos.libooks.com/9789501204322_md.webp",
+    "code": 6,
+    "stock": 10,
+    "id": 6
+  },
+  {
+    "title": "Mazo Astral OHLALÁ!",
+    "descripcion": "Querés que la fuerza astral te acompañe en tu día a día? Porque sabemos que la astrología es un camino de autoconocimiento, diseñamos un óraculo astrológico de 40 cartas, divididas en tres mazos: 1) signos (con la energía de cada uno), 2) planetas (con sus movimientos directos y retrógrados) y 3) casas (con las áreas de la vida en donde trabajan)",
+    "price": 200,
+    "thumbnail": "https://catalogos.libooks.com/9789878487595_md.webp",
+    "code": 7,
+    "stock": 10,
+    "id": 7
+  },
+  {
+    "title": "Adiós cachorra",
+    "descripcion": "No estar en pareja está bien, separarse está bien, tener apps de citas está bien, salir y divertirse está bien. Lo que no está bien bajo ningún punto de vista es que sigamos permitiendo que la frustración que nos genera el ghosting, ",
+    "price": 200,
+    "thumbnail": "https://catalogos.libooks.com/9789504979395_md.webp",
+    "code": 8,
+    "stock": 10,
+    "id": 8
+  },
+  {
+    "title": "El fin de la inflación",
+    "descripcion": "Plantándole cara a la casta política, peleando contra un supuesto sentido común de época que está destruyendo la Argentina y retando a duelo de ideas a colegas economistas, el candidato a la presidencia de la Nación presenta aquí tres textos que conforman el núcleo de lo que podría ser leído como un programa de gobierno,",
+    "price": 200,
+    "thumbnail": "https://catalogos.libooks.com/9789504981718_md.webp",
+    "code": 9,
+    "stock": 10,
+    "id": 9
+  },
+  {
+    "title": "Solitario",
+    "descripcion": "Mi nombre es Tori Spring. Me gusta dormir, bloguear y hasta el año pasado tenía amigos. Antes de lo que ocurrió con Charlie, de intentar ingresar a la universidad y tener que hablar con la gente. ",
+    "price": 200,
+    "thumbnail": "https://catalogos.libooks.com/9789877478877_md.webp",
+    "code": 10,
+    "stock": 10,
+    "id": 10
+  },
+  {
+    "title": "Messi campeón del mundo",
+    "descripcion": "¿Sabés quién era el ídolo de Messi cuando era chico? ¿Conocés todos los títulos que ganó Leo a lo largo de su carrera? ¿Querés conocer todo lo que pasó en este Mundial? ",
+    "price": "300",
+    "code": "11",
+    "stock": "50",
+    "thumbnail": "https://catalogos.libooks.com/9789878151335_md.webp",
+    "id": 11,
+    "status": true
+  }
+]
